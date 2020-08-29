@@ -18,7 +18,7 @@ class CofeCar:
     '''
     def __init__(self, cord, adres):
         self.cord = cord
-        self.adres = adres
+        self.address = adres
         self.drincs = []
 
     def add(self, drinc):
@@ -29,12 +29,12 @@ class CofeCar:
 
     @property
     def asdict(self):
-        return {'ader': self.adres,
+        return {'ader': self.address,
                 'cord': self.cord.dict_cord,
                 'drics':[d.name for d in self.drincs]}
 
     def restor(self, params, drincs_list: DrinksList):
-        self.adres = params['ader']
+        self.address = params['ader']
         self.cord = Coord(params['cord']['x'],params['cord']['y'])
         for drink_name in params.get('drics'):
             drink = drincs_list.getDrinkByName(drink_name)
