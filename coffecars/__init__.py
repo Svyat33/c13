@@ -1,2 +1,2 @@
 from .drink import Drink
-from .cars import Car
+from .cars import CofeCar

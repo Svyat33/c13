@@ -4,7 +4,7 @@ from coffecars.coord import Coord
 from coffecars.drink import DrinksList, Drink
 
 
-class Car:
+class CofeCar:
 
     NORM_DISTANCE = 20
 
@@ -41,7 +41,22 @@ class Car:
             self.add( drink )
 
     def __eq__(self, other):
-        return isinstance(other, Car) and self.cord.distance_to(other) < Car.NORM_DISTANCE
+        return isinstance(other, CofeCar) and self.cord.distance_to(other) < CofeCar.NORM_DISTANCE
+
+    def applyDrinks(self, drinks, flag):
+        if flag:
+            self.remDrinks(None)
+        for drink in drinks:
+            self.add(drink)
+
+    def remDrinks(self, drinks):
+        if not drinks:
+            drinks = self.drincs
+        for drink in drinks:
+            if drink in self.drincs:
+                self.drincs.pop(self.drincs.index(drink))
+                drink.remCar(self)
+
 
 
 
