@@ -1,4 +1,4 @@
-from coffecars import Car, Drink
+from coffecars import CofeCar, Drink
 from coffecars.cars import Cars_list
 from coffecars.drink import DrinksList
 
@@ -17,4 +17,4 @@ if __name__ == '__main__':
         if action=='q':
             break
 
-
+testtesttesttesttest

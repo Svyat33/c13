@@ -17,9 +17,14 @@ class Drink:
         return isinstance(other, Drink) and self.name == other.name
 
     def setCar(self, car):
-        from coffecars import Car
-        if isinstance(car, Car) and car not in self.cars:
+        from coffecars import CofeCar
+        if isinstance(car, CofeCar) and car not in self.cars:
             self.cars.append(car)
+
+    def remCar(self, car):
+        from coffecars import CofeCar
+        if isinstance(car, CofeCar) and car in self.cars:
+            self.cars.pop(self.cars.index(car))
 
 
 class DrinksList:
